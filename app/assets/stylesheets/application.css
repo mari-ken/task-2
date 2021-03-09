@@ -13,3 +13,67 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  padding: 30px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+h1{
+  margin-bottom: 10px;
+}
+
+a{
+  color: #000;
+}
+
+p,th,td{
+  font-size: 13px;
+}
+
+.flash{
+  color: #00CC33;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+/* トップページ */
+.top-text-box{
+  padding-left: 20px;
+}
+.start-button{
+  margin-top: 20px;
+}
+.top-text{
+  margin-bottom: 15px;
+}
+
+/* 一覧ページ */
+.index-button{
+  margin: 0 5px;
+}
+th,td{
+  padding: 5px 7px;
+}
+h2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.input-box{
+  margin-bottom: 10px;
+}
+
+/* 詳細ページ */
+.show-book{
+  margin-left: 20px;
+  margin-bottom: 30px;
+}

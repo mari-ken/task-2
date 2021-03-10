@@ -13,12 +13,12 @@
  *= require_tree .
  *= require_self
  */
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 
 body{
   padding: 30px;
@@ -36,7 +36,7 @@ a{
   color: #000;
 }
 
-p,th,td{
+p,th,td,li{
   font-size: 13px;
 }
 
@@ -68,12 +68,22 @@ h2{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.input-box{
-  margin-bottom: 10px;
+ul {
+  color: red;
+  margin-left: 30px;
 }
 
 /* 詳細ページ */
 .show-book{
   margin-left: 20px;
   margin-bottom: 30px;
+}
+
+/* フォーム */
+.input-box{
+  margin-bottom: 10px;
+}
+.input-btn{
+  width: 90px;
+  height: 25px;
 }

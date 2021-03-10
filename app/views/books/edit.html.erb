@@ -1,5 +1,13 @@
 <h1>Editing Book</h1>
 <%= form_with model:@book,local:true do |f| %>
+  <% if @book.errors.any? %>
+    <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+      <li>error: <%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
   <div class="input-box">
     <p>Title</p>
     <%= f.text_field :title %>
@@ -9,7 +17,7 @@
     <%= f.text_area :body %>
   </div>
   <div class="input-box">
-    <%= f.submit 'Update book' %>
+    <%= f.submit 'Update Book' , class:'input-btn' %>
   </div>
 <% end %>
 <p><%= link_to "Show", book_path(@book)%> | <%= link_to "back", books_path %></p>

@@ -1,17 +1,18 @@
 class BooksController < ApplicationController
-  def index #index.html起動時
-    @book = Book.new #インスタンス変数"book"に空のモデル"Book"を生成する。
+  def index
+    @book = Book.new
 
     @books = Book.all
   end
 
   def create
-    book = Book.new(book_params)  #データを新規登録するためのインスタンス"list"作成
-    if book.save #データをデータベースに保存
+    @book = Book.new(book_params)
+    if @book.save
       flash[:notice] = "Book was successfully created."
-      redirect_to book_path(book.id)#Show画面へリダイレクト
+      redirect_to book_path(@book.id)
     else
-      #render :index
+      @books = Book.all
+      render 'index'
     end
   end
 
@@ -24,20 +25,19 @@ class BooksController < ApplicationController
   end
 
   def update
-    book = Book.find(params[:id])
-    if book.update(book_params)
-      
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
       flash[:notice] = "Book was successfully updated."
-      redirect_to book_path(book.id)
+      redirect_to book_path(@book.id)
     else
-      redirect_to edit_book_path(book),notice: "error:Input field is blank."
+      render 'edit'
     end
   end
 
   def destroy
     book = Book.find(params[:id])
     book.destroy
-    
+
     flash[:notice] = "Book was successfully destroyed."
     redirect_to books_path
   end
